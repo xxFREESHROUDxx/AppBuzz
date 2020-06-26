@@ -22,4 +22,6 @@ function handleExit(err) {
 process.on("exit", handleExit.bind(null));
 process.on("SIGINT", handleExit.bind(null));
 process.on("SIGTERM", handleExit.bind(null));
+process.on("SIGKILL", console.log("here mf"));
+
 process.on("uncaughtException", handleExit.bind(null));
