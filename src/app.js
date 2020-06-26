@@ -8,7 +8,7 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json');
 
 const app = express();
-
+process.env.CORS_ORIGIN = "http://localhost:3000, https://webalarm.herokuapp.com";
 app.use(
   cors({
     origin(origin, cb) {
