@@ -59,10 +59,10 @@ async function createNotificationSubscription() {
 /**
  * returns the subscription if present or nothing
  */
-function getUserSubscription() {
+async function getUserSubscription() {
   //wait for service worker installation to be ready, and then
   console.log(navigator.serviceWorker);
-  return navigator.serviceWorker.ready
+  return await navigator.serviceWorker.ready
     .then(function(serviceWorker) {
       return serviceWorker.pushManager.getSubscription();
     })
