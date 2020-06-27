@@ -37,6 +37,7 @@ function sendNotification() {
  *
  */
 function registerServiceWorker() {
+  console.log(isPushNotificationSupported());
   return navigator.serviceWorker.register("/sw.js");
 }
 
