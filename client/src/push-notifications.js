@@ -58,18 +58,20 @@ async function createNotificationSubscription() {
 /**
  * returns the subscription if present or nothing
  */
-async function getUserSubscription() {
+ function getUserSubscription() {
   //wait for service worker installation to be ready, and then
-  if(registerServiceWorker){
-    return await navigator.serviceWorker.ready.then(function(serviceWorker) {
-      return serviceWorker.pushManager.getSubscription();
+   return registerServiceWorker().then(async function(){
+      return await navigator.serviceWorker.ready.then(function(serviceWorker) {
+        return serviceWorker.pushManager.getSubscription();
+      })
+      .then(function(pushSubscription) {
+        return pushSubscription;
+      });
     })
-    .then(function(pushSubscription) {
-      return pushSubscription;
-    });
+   
   }
   
-}
+
 
 export {
   isPushNotificationSupported,
