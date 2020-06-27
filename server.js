@@ -1,9 +1,7 @@
 const app = require("./src/app");
 
-
-
 const port = process.env.PORT || 8080;
-const host = process.env.HOSTNAME || "localhost";
+const host = process.env.HOSTNAME || "0.0.0.0";
 
 // Launch Node.js server
 const server = app.listen(port, host, () => {
@@ -22,6 +20,4 @@ function handleExit(err) {
 process.on("exit", handleExit.bind(null));
 process.on("SIGINT", handleExit.bind(null));
 process.on("SIGTERM", handleExit.bind(null));
-process.on("SIGKILL", console.log("here mf"));
-
 process.on("uncaughtException", handleExit.bind(null));
