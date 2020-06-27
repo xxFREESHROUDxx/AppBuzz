@@ -1,4 +1,4 @@
-const host = process.env.NODE_ENV === "production" ? "https://push-notification-demo-server.herokuapp.com" : "http://codewithsudeep:8080";
+const host = process.env.NODE_ENV === "production" ? "https://webalarm.herokuapp.com" : "http://localhost:8080";
 
 function post(path, body) {
   return fetch(`${host}${path}`, {
