@@ -23,13 +23,13 @@ function handlePushNotificationSubscription(req, res) {
 }
 
 function sendPushNotification(req, res) {
-  const subscriptionId = req.params.id;
+  const subscriptionId = req.body.id;
   const pushSubscription = subscriptions[subscriptionId];
   webpush
     .sendNotification(
       pushSubscription,
       JSON.stringify({
-        title: "New Product Available ",
+        title: "Nothing Aviable",
         text: "HEY! Take a look at this brand new t-shirt!",
         image: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
         tag: "new-product",
@@ -37,7 +37,7 @@ function sendPushNotification(req, res) {
       })
     )
     .catch(err => {
-      console.log(err);
+      console.log("backend ma problem---websocket");
     });
 
   res.status(202).json({});

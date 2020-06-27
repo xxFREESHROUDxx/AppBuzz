@@ -9,6 +9,8 @@ import {
   createNotificationSubscription,
   getUserSubscription
 } from "./push-notifications";
+import { json } from "body-parser";
+// import { use } from "./app";
 //import all the function created to manage the push notifications
 
 const pushNotificationSupported = isPushNotificationSupported();
@@ -40,7 +42,8 @@ export default function usePushNotifications() {
   //this effect runs only the first render
   
   useEffect(() => {
-    setLoading(true);
+    if (pushNotificationSupported) 
+    {setLoading(true);
     setError(false);
     const getExixtingSubscription = async () => {
       const existingSubscription = await getUserSubscription();
@@ -48,6 +51,7 @@ export default function usePushNotifications() {
       setLoading(false);
     };
     getExixtingSubscription();
+  }
   }, []);
   //Retrieve if there is any push notification subscription for the registered service worker
   // this use effect runs only in the first render
@@ -103,7 +107,12 @@ export default function usePushNotifications() {
     http
       .post("/subscription", userSubscription)
       .then(function(response) {
-        setPushServerSubscriptionId(response.id);
+        const useID = {
+          "endpoint":userSubscription.endpoint,
+          "options":userSubscription.options,
+          "id": response.id
+        };
+        setPushServerSubscriptionId(useID);
         setLoading(false);
       })
       .catch(err => {
@@ -115,10 +124,11 @@ export default function usePushNotifications() {
   /**
    * define a click handler that request the push server to send a notification, passing the id of the saved subscription
    */
-  const onClickSendNotification = async () => {
+  const onClickSendNotification = () => {
     setLoading(true);
     setError(false);
-    await http.get(`/subscription/${pushServerSubscriptionId}`).catch(err => {
+    console.log(pushServerSubscriptionId)
+     http.post("/subscriptionpost", pushServerSubscriptionId).catch(err => {
       setLoading(false);
       setError(err);
     });

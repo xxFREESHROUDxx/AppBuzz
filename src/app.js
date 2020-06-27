@@ -35,6 +35,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post("/subscription", subscriptionHandler.handlePushNotificationSubscription);
-app.get("/subscription/:id", subscriptionHandler.sendPushNotification);
+app.post("/subscriptionpost", subscriptionHandler.sendPushNotification);
 
 module.exports = app;

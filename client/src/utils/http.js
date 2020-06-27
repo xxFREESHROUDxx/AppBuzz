@@ -1,6 +1,7 @@
 const host = process.env.NODE_ENV === "production" ? "https://webalarm.herokuapp.com" : "http://localhost:8080";
 
 function post(path, body) {
+  console.log(host+""+path);
   return fetch(`${host}${path}`, {
     credentials: "omit",
     headers: { "content-type": "application/json;charset=UTF-8", "sec-fetch-mode": "cors" },
@@ -17,7 +18,8 @@ function post(path, body) {
 }
 
 function get(path) {
-  return fetch(`${host}${path}`, {
+
+  return fetch(host+'sk', {
     credentials: "omit",
     headers: { "content-type": "application/json;charset=UTF-8", "sec-fetch-mode": "cors" },
     method: "GET",
