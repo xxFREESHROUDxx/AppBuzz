@@ -9,7 +9,7 @@ import {
   createNotificationSubscription,
   getUserSubscription
 } from "./push-notifications";
-import { json } from "body-parser";
+// import { json } from "body-parser";
 // import { use } from "./app";
 //import all the function created to manage the push notifications
 

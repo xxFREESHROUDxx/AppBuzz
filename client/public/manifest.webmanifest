@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "A web-alarm application",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "images/icon256.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "WEB ALARM",
+    "short_name": "ALARM",
+    "start_url": "/"
+  }
