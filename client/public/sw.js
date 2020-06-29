@@ -23,5 +23,13 @@ function openPushNotification(event) {
   event.waitUntil(clients.openWindow(event.notification.data));
 }
 
+self.addEventListener('fetch', function(e) {
+  console.log(e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
+});
 self.addEventListener("push", receivePushNotification);
 self.addEventListener("notificationclick", openPushNotification);
