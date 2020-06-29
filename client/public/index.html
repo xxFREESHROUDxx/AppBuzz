@@ -17,10 +17,39 @@
      <meta name="twitter:card" content="summary"></meta>
      <meta name="twitter:site" content="http://webalarm.herokuapp.com/" />
      <meta name="twitter:creator" content="@codewithsudeep" />
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+     <style>
+       .add-button {
+        min-width: 230px;
+        margin: auto;
+        background: #309830;
+        color: #ffffff;
+        border-radius: 12px;
+        margin-top: 28px;
+        border: none;
+        line-height: 2;
+        }
+        .cancel {
+        margin: auto;
+        min-width: 230px;
+        background: #bd1111;
+        color: #ffffff;
+        border-radius: 12px;
+        margin-top: 28px;
+        border: none;
+        line-height: 2;
+        }
+
+
+     </style>
    </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <button class="add-button">Add to home screen</button>
+    <div class="install-dialog">
+      <h2>Add web alarm to your home screen</h2><hr>
+      <button class="add-button">Add to home screen</button>
+      <button class="cancel">Cancel</button>
+    </div>
     <div id="root"></div>
   </body>
 </html>

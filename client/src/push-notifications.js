@@ -64,6 +64,9 @@ async function createNotificationSubscription() {
    return registerServiceWorker().then(async function(){
         let deferredPrompt;
         const addBtn = document.querySelector('.add-button');
+        const addD = document.querySelector('.install-dialog')
+        const cancel = document.querySelector('.cancel')
+
         addBtn.style.display = 'none';
         
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -73,7 +76,11 @@ async function createNotificationSubscription() {
           deferredPrompt = e;
           // Update UI to notify the user they can add to home screen
           addBtn.style.display = 'block';
-        
+          addD.style.display = 'block';
+          cancel.addEventListener('click',(e)=>{
+            e.preventDefault();
+            addD.style.display = 'none';
+          })
           addBtn.addEventListener('click', (e) => {
             // hide our user interface that shows our A2HS button
             addBtn.style.display = 'none';
