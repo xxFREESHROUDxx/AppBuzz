@@ -24,6 +24,8 @@ function openPushNotification(event) {
 }
 
 
+
+
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 const OFFLINE_VERSION = 1;
@@ -89,7 +91,6 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('fetch', function(e) {
-  console.log(e.request.url);
   e.respondWith(
     caches.match(e.request).then(function(response) {
       return response || fetch(e.request);

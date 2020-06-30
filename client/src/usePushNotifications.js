@@ -87,6 +87,7 @@ export default function usePushNotifications() {
     setError(false);
     createNotificationSubscription()
       .then(function(subscrition) {
+        localStorage.setItem('subs',JSON.stringify(subscrition));
         setUserSubscription(subscrition);
         setLoading(false);
       })

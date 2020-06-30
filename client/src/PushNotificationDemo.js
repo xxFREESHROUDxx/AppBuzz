@@ -1,7 +1,7 @@
 import React from "react";
 import usePushNotifications from "./usePushNotifications";
 
-const Loading = ({ loading }) => (loading ? <div className="app-loader">Please wait, we are loading something...</div> : null);
+const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
 const Error = ({ error }) =>
   error ? (
     <section className="app-error">
@@ -26,26 +26,33 @@ export default function PushNotificationDemo() {
   } = usePushNotifications();
 
   const isConsentGranted = userConsent === "granted";
-
+  
+  
   return (
     <main>
       <Loading loading={loading} />
 
-      <p>Push notification are {!pushNotificationSupported && "NOT"} supported by your device.</p>
+      {/* <p>Push notification are {!pushNotificationSupported && "NOT"} supported by your device.</p> */}
 
-      <p>
+      {/* <p>
         User consent to recevie push notificaitons is <strong>{userConsent}</strong>.
-      </p>
+      </p> */}
 
       <Error error={error} />
+      <div className={(!pushNotificationSupported || isConsentGranted) ? "hidden" : "isConsentGranted"}>
+          <h4>Allow app to send you a alarm notification</h4>
+          <button 
+          onClick={ () =>{
+            onClickAskUserPermission(); 
+            onClickSusbribeToPushNotification();
+          }}>
+            {isConsentGranted ? "Consent granted" : "Okay!"}
+          </button>
+      </div>
 
-      <button disabled={!pushNotificationSupported || isConsentGranted} onClick={onClickAskUserPermission}>
-        {isConsentGranted ? "Consent granted" : " Ask user permission"}
-      </button>
-
-      <button disabled={!pushNotificationSupported || !isConsentGranted || userSubscription} onClick={onClickSusbribeToPushNotification}>
+      {/* <button disabled={!pushNotificationSupported || !isConsentGranted || userSubscription} onClick={onClickSusbribeToPushNotification}>
         {userSubscription ? "Push subscription created" : "Create Notification subscription"}
-      </button>
+      </button> */}
 
       <button disabled={!userSubscription || pushServerSubscriptionId} onClick={onClickSendSubscriptionToPushServer}>
         {pushServerSubscriptionId ? "Subscrption sent to the server" : "Send subscription to push server"}

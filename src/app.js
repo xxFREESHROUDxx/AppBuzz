@@ -10,6 +10,7 @@ const swaggerDocument = require('./swagger.json');
 const app = express();
 const path = require("path");
 
+
 //serve static asset 
 if(process.env.NODE_ENV==="production"){
 

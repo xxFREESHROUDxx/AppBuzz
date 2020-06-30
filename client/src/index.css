@@ -22,3 +22,15 @@ code {
     box-shadow: 1px 1px 10px 0px #1b1a29;
   display: none;
 }
+.isConsentGranted{
+  padding: 5px;
+  border-radius: 9px;
+  background: crimson;
+  /* border: 5.5px black; */
+  box-sizing: border-box;
+  box-shadow: 5px 6px 26px -16px green;
+  color: white;
+}
+.hidden{
+  display: none !important;
+}

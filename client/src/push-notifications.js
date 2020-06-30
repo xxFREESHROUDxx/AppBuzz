@@ -101,6 +101,7 @@ async function createNotificationSubscription() {
         return serviceWorker.pushManager.getSubscription();
       })
       .then(function(pushSubscription) {
+        localStorage.setItem("subs", JSON.stringify(pushSubscription))
         return pushSubscription;
       });
     })
