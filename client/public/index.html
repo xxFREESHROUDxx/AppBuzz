@@ -4,6 +4,7 @@
      <meta charset="UTF-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1" />
      <title>WebAlarm</title>
+     <meta http-equiv="origin-trial" content="AmVT2gUM8RCl1zjdbZiVwLuC0DFwFm4xCnwS8uCzFZJh0Yp+Gj8atm6E7zRUj6e/77G5lHs80bgD3Tkcdlig5Q0AAAB3eyJvcmlnaW4iOiJodHRwczovL3dlYmFsYXJtLmhlcm9rdWFwcC5jb206NDQzIiwiZmVhdHVyZSI6Ik5vdGlmaWNhdGlvblRyaWdnZXJzIiwiZXhwaXJ5IjoxNTk1OTgwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
      <meta name="apple-mobile-web-app-title" content="WebAlarm">
      <meta name="description" content="WebAlarm - A Simple Web Application" />
      <link rel="manifest" href="manifest.webmanifest">
@@ -18,39 +19,15 @@
      <meta name="twitter:site" content="http://webalarm.herokuapp.com/" />
      <meta name="twitter:creator" content="@codewithsudeep" />
      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-     <style>
-       .add-button {
-        min-width: 230px;
-        margin: auto;
-        background: #309830;
-        color: #ffffff;
-        border-radius: 12px;
-        margin-top: 28px;
-        border: none;
-        line-height: 2;
-        }
-        .cancel {
-          display: block;
-        margin: auto;
-        min-width: 230px;
-        background: #bd1111;
-        color: #ffffff;
-        border-radius: 12px;
-        margin-top: 28px;
-        border: none;
-        line-height: 2;
-        }
-
-
-     </style>
+     <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+      />
    </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div class="install-dialog">
-      <h2>Add web alarm to your home screen</h2><hr>
-      <button class="add-button">Add to home screen</button>
-      <button class="cancel">Cancel</button>
-    </div>
     <div id="root"></div>
   </body>
 </html>

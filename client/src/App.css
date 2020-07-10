@@ -1,21 +1,48 @@
 .App {
-  text-align: center;
   min-height: 100vh;
   padding: 10px;
 }
 
-a,
-a:visited {
-  color: white;
-  line-height: 1.2rem;
-  font-size: 1.2rem;
+.body{
+  max-height: 100vh;
+  min-height: 100vh;
+
+}
+.sidebar{
+  max-height: 8vh;
+  min-height: 8vh;
+}
+.content{
+  max-height: 84vh;
+  min-height: 84vh;
+}
+.footer{
+  max-height: 8vh;
+  min-height: 8vh;
+  display: block;
+  justify-content: center;
+  justify-items: center;
+  flex: 3 1;
+  font-size: 30px;
+  padding: 7px 0px;
+  width: 100%;
+  border-top: 1px solid #5f595952;
+  background: #ebebed;
+}
+.footer .left-text{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.footer .right-text{
+  float: right;
+  width: 50%;
+  text-align: right;
+  color: #5e5d5e;
 }
 
-a:hover {
-  border-bottom: 1px solid #ccc;
-}
 
-button {
+/* button {
   padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
@@ -24,7 +51,7 @@ button {
   color: white;
   margin: 5px;
   cursor: pointer;
-}
+} */
 
 button:disabled {
   /* background-color: #aaa; */

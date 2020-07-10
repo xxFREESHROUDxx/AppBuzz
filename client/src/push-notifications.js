@@ -7,6 +7,7 @@ function isPushNotificationSupported() {
   return "serviceWorker" in navigator && "PushManager" in window;
 }
 
+
 /**
  * asks user consent to receive push notifications and returns the response of the user, one of granted, default, denied
  */

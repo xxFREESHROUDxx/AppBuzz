@@ -1,7 +1,7 @@
 {
     "background_color": "#309830",
-    "description": "A web-alarm application",
-    "display": "fullscreen",
+    "description": "A web application",
+    "display": "standalone",
     "icons": [
       {
         "src": "images/icon256.png",
@@ -9,7 +9,7 @@
         "type": "image/png"
       }
     ],
-    "name": "WEB ALARM",
-    "short_name": "ALARM",
+    "name": "AppBuzz",
+    "short_name": "AppBuzz",
     "start_url": "/"
   }

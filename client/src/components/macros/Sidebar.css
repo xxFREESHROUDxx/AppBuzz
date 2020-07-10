@@ -1,0 +1,71 @@
+
+.sidebar{
+  background: #e8e8ead1;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #584a4a2e;
+}
+
+.MuiButton-text {
+  padding: 0 !important;
+}
+.MuiButton-root {
+  padding: 0;
+  border: none;
+  outline: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  min-width: 30px !important;
+  background-color: #151414a8 !important;
+  padding: 10px 13px !important;
+  color: white !important;
+}
+
+.drawer {
+  inset:unset !important;
+  min-width: 250px;
+  max-width: 250px;
+  transition: all 0.3s;
+  background: #fff;
+  -webkit-box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+  -moz-box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+  box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+}
+.drawer ul {
+  padding: 0;
+}
+.drawer ul li:nth-child(even) {
+  background: #fcfcfc;
+}
+.drawer li {
+  padding: 15px 20px;
+  font-size: 14px;
+  list-style: none;
+  color: #6a6a6a;
+}
+.drawer li a{
+    color: #6a6a6a;
+}
+.drawer li a:hover{
+    text-decoration: none;
+    color: #6a6a6a;
+}
+
+.sidebar ul{
+  padding-top: 12px;
+  margin: 10px 0;
+  padding: 0;
+  /* padding-bottom: 5px; */
+  color: #7a7a7a;
+}
+.sidebar ul li{
+  display: inline-block;
+  width: 50%;
+  font-size: 16px;
+}
+/* .pageTitle{
+  border-bottom:  0.5px solid #9a9a9a;
+} */
+.pageTitle .date{
+  color: #74b9ff;
+}

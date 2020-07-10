@@ -133,6 +133,10 @@ export default function usePushNotifications() {
       setLoading(false);
       setError(err);
     });
+    // http.post("https://pushpad.xyz/api/v1/projects/7340/notifications",opt).catch(err => {
+    //     setLoading(false);
+    //     setError(err);
+    //   });
     setLoading(false);
   };
 

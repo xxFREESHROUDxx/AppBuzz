@@ -1,0 +1,28 @@
+.welcome{
+    display: flex;
+    flex: 1;
+    justify-items: center;
+    align-items: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+
+.welcome a{
+    display: block;
+    list-style: none;
+    min-width: 36%;
+    color: #0604049e;
+    padding: 20px 10px;
+    font-size: 21px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #8080804f;
+    margin: 24px;
+    text-align: center;
+    box-shadow: 10px 7px 42px -18px #8e20449c;
+    text-transform: uppercase;
+  }
+  

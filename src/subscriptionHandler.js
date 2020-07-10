@@ -7,6 +7,8 @@ const vapidKeys = {
   publicKey: "BIN2Jc5Vmkmy-S3AUrcMlpKxJpLeVRAfu9WBqUbJ70SJOCWGCGXKY-Xzyh7HDr6KbRDGYHjqZ06OcS3BjD7uAm8"
 };
 
+
+
 webpush.setVapidDetails("mailto:example@yourdomain.org", vapidKeys.publicKey, vapidKeys.privateKey);
 
 function createHash(input) {
@@ -25,6 +27,7 @@ function handlePushNotificationSubscription(req, res) {
 function sendPushNotification(req, res) {
   const subscriptionId = req.body.id;
   const pushSubscription = subscriptions[subscriptionId];
+  const alarmTime = new Date().getTime() + 90 * 1000;
   webpush
     .sendNotification(
       pushSubscription,
@@ -32,6 +35,7 @@ function sendPushNotification(req, res) {
         title: "Nothing Aviable",
         text: "HEY! Take a look at this brand new t-shirt!",
         image: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
+        timestamp: alarmTime,
         tag: "new-product",
         url: "/new-product-jason-leung-HM6TMmevbZQ-unsplash.html"
       })

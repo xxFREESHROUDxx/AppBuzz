@@ -1,27 +1,28 @@
-function receivePushNotification(event) {
-  console.log("[Service Worker] Push Received.");
+// function receivePushNotification(event) {
+//   // console.log("[ Service Worker] Push Received.");
+//   console.log(event.data.json());
+//   const { image, tag, url, title, text, timestamp } = event.data.json();
+//   const options = {
+//     data: url,
+//     body: text,
+//     icon: image,
+//     vibrate: [200, 100, 200],
+//     tag: tag,
+//     timestamp: timestamp, // set the time for the push notification
+//     image: image,
+//     badge: "https://spyna.it/icons/favicon.ico",
+//     actions: [{ action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000" }]
+//   };
 
-  const { image, tag, url, title, text } = event.data.json();
+//  event.waitUntil(self.registration.showNotification(title, options));
+// }
 
-  const options = {
-    data: url,
-    body: text,
-    icon: image,
-    vibrate: [200, 100, 200],
-    tag: tag,
-    image: image,
-    badge: "https://spyna.it/icons/favicon.ico",
-    actions: [{ action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000" }]
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
-}
-
-function openPushNotification(event) {
-  console.log("[Service Worker] Notification click Received.", event.notification.data);
+// function openPushNotification(event) {
+//   console.log("[Service Worker] Notification click Received.", event.notification.data);
   
-  event.notification.close();
-  event.waitUntil(clients.openWindow(event.notification.data));
-}
+//   event.notification.close();
+//   event.waitUntil(clients.openWindow(event.notification.data));
+// }
 
 
 
@@ -102,5 +103,5 @@ self.addEventListener('fetch', function(e) {
   );
 });
 
-self.addEventListener("push", receivePushNotification);
-self.addEventListener("notificationclick", openPushNotification);
+// self.addEventListener("push", receivePushNotification);
+// self.addEventListener("notificationclick", openPushNotification);

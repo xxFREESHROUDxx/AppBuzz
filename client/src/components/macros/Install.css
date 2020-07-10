@@ -1,0 +1,34 @@
+
+.add-button {
+font-size: 14px;
+background: #5e5d5e;
+color: #ffffff;
+border-radius: 2px;
+border: none;
+line-height: 2;
+outline: none;
+border: none;
+    }
+.cancel {
+   
+    line-height: 2;
+}
+.prompt{
+    font-size: 15px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.install-dialog{
+    text-align: center;
+    width: 100vw;
+    z-index: 999;
+    background-color: #292929;
+    border-radius: 1px;
+    max-height: 26vh;
+    position: absolute;
+    padding: 21px 20px;
+    box-shadow: 5px 7px 31px -27px #1b1a29;
+    display: none;
+    bottom: 0px;
+  }
