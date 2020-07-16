@@ -12,7 +12,7 @@
 .welcome a{
     display: block;
     list-style: none;
-    min-width: 33%;
+    min-width: 15%;
     color: #0604049e;
     padding: 20px 10px;
     font-size: 21px;
@@ -26,3 +26,8 @@
     text-transform: uppercase;
   }
   
+  @media (min-width: 360px) and (max-width: 720px) {
+    .welcome a{
+        width: 32%;
+    }
+  }

@@ -44,41 +44,18 @@ export default function Sidebar(props) {
     >
       <ul>
         <li>
-          <a href="./">
+          <a href="/">
             <i className="fas fa-home"></i> Home
           </a>
         </li>
         <li>
-          <i className="fas fa-newspaper"></i> Attendance
+          <i className="fas fa-newspaper"></i> Documentation
         </li>
         <li>
-          <i className="fas fa-dollar-sign"></i> Fees Details
+          <i className="fas fa-dollar-sign"></i> Login
         </li>
         <li>
-          <i className="fas fa-list-ul"></i> Assignments
-        </li>
-        <li>
-          <i className="far fa-question-circle"></i> Examination
-        </li>
-        <li>
-          <i className="fas fa-scroll"></i> Results
-        </li>
-        <li>
-          <a href="./messages.html">
-            <i className="far fa-envelope"></i> Messages
-          </a>
-        </li>
-        <li>
-          <i className="fas fa-gift"></i> Opportunities
-        </li>
-        <li>
-          <i className="fas fa-code"></i> Practicals
-        </li>
-        <li>
-          <i className="far fa-check-circle"></i> Approved Application
-        </li>
-        <li>
-          <i className="far fa-user"></i> Faculty
+          <i className="fas fa-list-ul"></i> Contact Developer
         </li>
       </ul>
     </div>
@@ -91,7 +68,7 @@ export default function Sidebar(props) {
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <ul>
               <li>
-                 AppBuzz
+                <img src="/images/square.png" height="16px" /> AppBuzz
               </li>
               <li className="text-right">
                   {["right"].map((anchor) => (

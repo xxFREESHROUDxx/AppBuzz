@@ -1,15 +1,16 @@
 {
-    "background_color": "#309830",
+    "background_color": "white",
     "description": "A web application",
     "display": "standalone",
     "icons": [
       {
-        "src": "images/icon256.png",
-        "sizes": "192x192",
+        "src": "images/square.png",
+        "sizes": "256x256",
         "type": "image/png"
       }
     ],
     "name": "AppBuzz",
     "short_name": "AppBuzz",
-    "start_url": "/"
+    "start_url": "/",
+    "color":"black"
   }
