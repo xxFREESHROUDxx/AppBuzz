@@ -7,6 +7,7 @@ import Todo from "./components/Todo/Todo";
 import Welcome from './Welcome';
 import Music from "./components/Music/Music";
 import Calculator from "./components/Calculator/Calculator";
+import Join from "./components/Chat/Join";
 import Chat from "./components/Chat/Chat";
 import News from "./components/News/News";
 import Quotes from "./components/Quotes/Quotes";
@@ -88,7 +89,8 @@ class App extends Component {
               <Route path="/music"  component={Music}/>
               <Route path="/news"  component={News}/>
               <Route path="/calculator"  component={Calculator}/>
-              <Route path="/chat"  component={Chat}/>
+              <Route path="/chat"  component={Join}/>
+              <Route path="/messages" component={Chat}/>
               <Route path="/quotes"  component={Quotes}/>
             </div>
         </Router>

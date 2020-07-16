@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+// import Todolist from "./Todolist";
 
 class Todo extends Component{
     constructor(props){
         super(props);
         this.setTask = this.setTask.bind(this);
         this.saveTask = this.saveTask.bind(this);
+        this.Todolist = this.Todolist.bind(this);
         this.state = {
-            tasks:[],
+            tasks:null,
             current : {
                 task:'',
                 key:'',
@@ -22,28 +24,48 @@ class Todo extends Component{
     }
 
     setTask = (event) => {
+        
         this.setState({
            current: { 
                task:event.target.value,
                 key: Date.now() 
-                }, 
+            }, 
         })
     }
     saveTask = (event) => {
         event.preventDefault(); 
-       const newTask = this.state.current;
-       if (newTask.task!=="") {
-           const Tasks = this.state.tasks.push(newTask);
+        const newTask = this.state.current;
+        const Todos =  [newTask, ...this.state.tasks];
+        console.log(Todos);
+
              this.setState({
-                tasks: Tasks,
+                tasks: Todos,
                 current : {
                     task:'',
                     key:'',
                 }
             })
-            console.log(this.state);
+            console.log(this.state.tasks);
             localStorage.setItem('todos', JSON.stringify(this.state.tasks));   
-       }
+       
+    }
+
+    Todolist = () => {
+        const todos = this.state.tasks;
+        
+        // const task = todos.map(item => {
+        //     return (
+        //         <div className="card" key={item.key}>
+        //             <p>{item.task}</p>
+        //         </div>
+        //     )
+        // })
+        // return (
+        //     <div className="col-md-6">
+        //         {task}
+        //     </div>
+        // )
+    
     }
     render(){
         return(
@@ -54,7 +76,7 @@ class Todo extends Component{
                             <h3>Add to-do task</h3>
                            <form onSubmit={this.saveTask} >
                                <div className="form-group">
-                                   <input className="form-control" placeholder="Task....." onChange={this.setTask} value={this.state.task} />
+                                   <input className="form-control" placeholder="Task....." onChange={this.setTask} value={this.state.current.task} />
                                </div>
                                <div className="form-group">
                                    <input className="btn btn-sm btn-success" type="submit" />
@@ -63,7 +85,9 @@ class Todo extends Component{
                        </div>
                    </div>
                </div>
-
+                <div className="row">
+                    { this.Todolist("tok") }
+                </div>
            </div>
         )
     }

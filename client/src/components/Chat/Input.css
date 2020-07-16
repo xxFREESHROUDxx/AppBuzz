@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  border-top: 2px solid #D3D3D3;
+  height: 7vh;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 2%;
+  width: 85%;
+  font-size: 1.2em;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #000000;
+  padding: 14px 0;
+  display: inline-block;
+  border: none;
+  width: 15%;
+}
+
+@media (min-width: 720px) and (max-width: 1200px) {
+  .form{
+    max-height: 7vh;
+    min-height: 7vh;
+  }
+}

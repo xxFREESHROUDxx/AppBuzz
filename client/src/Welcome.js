@@ -8,10 +8,10 @@ class Welcome extends Component{
             <div>
             <div className="welcome-wrapper">
             <main className="container welcome">
-            <Link to={'/todo'}>Todo</Link>
-            <Link to={'/chat'}>chat</Link>
-            <Link to={'/music'}>music</Link>
-            <Link to={'/news'}>news</Link>
+            <Link to={'/todo'}> <i className="fas fa-clipboard-list"></i><br />Todo</Link>
+            <Link to={'/chat'}> <i className="fas fa-comment-alt"></i><br />chat</Link>
+            <Link to={'/music'}> <i className="fas fa-music"></i><br />music</Link>
+            <Link to={'/news'}> <i className="far fa-newspaper"></i><br />news</Link>
             <Link to={'/quotes'}>quotes</Link>
             </main>
             </div>

@@ -40,7 +40,8 @@ function get(path) {
 
 const http = {
   post: post,
-  get: get
+  get: get,
+  host: host,
 };
 
 export default http;
