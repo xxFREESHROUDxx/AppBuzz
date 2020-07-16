@@ -17,7 +17,7 @@ const socketio = require('socket.io')({
 
 const io = socketio.listen(server);
 
-const router = require('./src/router');
+// const router = require('./src/router');
 // console.log(io)
 
 const compression = require("compression");
@@ -81,7 +81,7 @@ io.on('connect', (socket) => {
 
 //serve static asset 
 app.use(cors());
-app.use(router);
+// app.use(router);
 if(process.env.NODE_ENV==="production"){
 
   app.use(express.static('client/build'));
