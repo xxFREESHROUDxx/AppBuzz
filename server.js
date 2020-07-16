@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 const host = process.env.HOSTNAME || "localhost";
 
 const server = app.listen(port, host, () => {
-  console.log('Port %d',port);
+  // console.log('Port %d',port);
   console.log(`Node.js API server is listening on http://${host}`);
 });
 
