@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 
 const port = process.env.PORT || 8080;
+// const host = process.env.HOSTNAME || "codewithsudeep";
 const host = process.env.HOSTNAME || "0.0.0.0";
+
 
 const server = app.listen(port, host, () => {
   console.log('Port %d',port);
@@ -15,7 +17,7 @@ const socketio = require('socket.io')({
 
 const io = socketio.listen(server);
 
-// const router = require('./src/router');
+const router = require('./src/router');
 // console.log(io)
 
 const compression = require("compression");
@@ -31,7 +33,6 @@ const path = require("path");
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./src/users');
 
 
-console.log("here");
 
 io.on('connect', (socket) => {
   console.log("user connected")
@@ -54,9 +55,17 @@ io.on('connect', (socket) => {
     const user = getUser(socket.id);
 
     io.to(user.room).emit('message', { user: user.name, text: message });
-
+    
     callback();
   });
+
+  socket.on('sendTyping', (data)=>{
+    const user = getUser(socket.id);
+    if(data.typing==true){
+       io.to(user.room).emit('display', data)
+    }
+    
+  })
 
   socket.on('disconnect', () => {
     console.log("user dis")
@@ -72,7 +81,7 @@ io.on('connect', (socket) => {
 
 //serve static asset 
 app.use(cors());
-// app.use(router);
+app.use(router);
 if(process.env.NODE_ENV==="production"){
 
   app.use(express.static('client/build'));

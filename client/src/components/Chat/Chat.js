@@ -17,6 +17,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [typing, setTyping] = useState('')
   const ENDPOINT = http.host;
 
   useEffect(() => {
@@ -39,11 +40,26 @@ const Chat = ({ location }) => {
   useEffect(() => {
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
+        setTyping(null);
     });
     
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+
+    socket.on('display', (data)=>{
+      console.log(data.user)
+      if(data.typing===true){
+        const trimmedName = data.user.trim().toLowerCase();
+          if(name === trimmedName) {
+            setTyping(null);
+          }else{
+            setTyping(data.user);
+          }
+      }   
+    });
+
+    setTimeout(setTyping(null), 5000);  
 }, []);
 
   const sendMessage = (event) => {
@@ -54,12 +70,18 @@ const Chat = ({ location }) => {
     }
   }
 
+  const sendTyping = () =>{
+    // event.preventDefault();
+    console.log("fend mesg")
+    socket.emit('sendTyping',{user:name, typing:true});
+  }
+
   return (
     <div className="outerContainer">
       <div className="w-100 m-0 p-0">
-          <InfoBar room={room} />
+          <InfoBar room={room} typing={typing} user={name} />
           <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} sendTyping={sendTyping}/>
       </div>
       <TextContainer users={users}/>
     </div>
