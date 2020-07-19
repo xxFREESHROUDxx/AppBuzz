@@ -15,6 +15,8 @@
 .content{
   max-height: 84vh;
   min-height: 84vh;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 .footer{
   max-height: 8vh;
@@ -40,7 +42,12 @@
   text-align: right;
   color: #5e5d5e;
 }
-
+.f-left{
+  float: left !important;
+}
+.f-right{
+  float: right !important;
+}
 
 /* button {
   padding: 10px 20px;

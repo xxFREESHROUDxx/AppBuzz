@@ -68,7 +68,7 @@ export default function Sidebar(props) {
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <ul>
               <li>
-                <img src="/images/square.png" height="16px" /> AppBuzz
+                <img src="/images/square.png" height="16px" alt=""/> AppBuzz
               </li>
               <li className="text-right">
                   {["right"].map((anchor) => (
