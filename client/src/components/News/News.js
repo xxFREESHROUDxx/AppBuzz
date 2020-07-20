@@ -20,6 +20,8 @@ class News extends Component{
                 loading:false
             })
             // console.log(this.state.news);
+        }).catch(err => {
+            console.log(err)
         })
     
     }

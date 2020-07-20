@@ -32,7 +32,7 @@
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
-const OFFLINE_URL = 'index.html, /static/js/bundle.js,/webmanifest.manifest' ;
+const OFFLINE_URL = 'offline.html' ;
 
 function alert(string){
   return alert(string);
