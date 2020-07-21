@@ -10,7 +10,7 @@ class News extends Component{
         super(props);
         this.state = {
             news:[],
-            loading:false,
+            loading:true,
         }
     }
     componentDidMount(){
