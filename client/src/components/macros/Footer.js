@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 export default class Footer extends Component{
-   
+   constructor(props){
+       super(props);
+
+   }
     backButton(){
         return window.history.go(-1);
     }
@@ -11,6 +14,7 @@ export default class Footer extends Component{
                     <a href="/" className="right-text">
                         <i className="fas fa-home"></i>
                     </a>
+                
                     <button className="left-text btn btn-bolder" onClick={ this.backButton }>
                         Back
                     </button>

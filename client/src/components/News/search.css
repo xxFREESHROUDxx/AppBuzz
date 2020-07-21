@@ -1,0 +1,12 @@
+.textfield{
+    width:80%;
+}
+.textfield input{
+    border-radius: 0 !important;
+}
+.searchbtn{
+    width: 20%;
+}
+.searchbtn button{
+    border-radius: 0 !important;
+}

@@ -16,6 +16,7 @@ import "./welcome.css";
 import Footer from "./components/macros/Footer";
 import { registerServiceWorker } from "./push-notifications";
 import Install from "./components/macros/Install";
+import Search from "./components/News/Search";
 // import PushNotificationDemo from "./PushNotificationDemo";
 const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
 
@@ -92,6 +93,7 @@ class App extends Component {
               <Route path="/chat"  component={Join}/>
               <Route path="/messages" component={Chat}/>
               <Route path="/quotes"  component={Quotes}/>
+              <Route path="/news_search" component={Search}/>
             </div>
         </Router>
         <Footer />

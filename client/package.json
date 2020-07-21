@@ -38,6 +38,7 @@
     "jest-watch-typeahead": "0.3.1",
     "math": "0.0.3",
     "mini-css-extract-plugin": "0.5.0",
+    "moment": "^2.27.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",

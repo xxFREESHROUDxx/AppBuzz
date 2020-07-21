@@ -1,20 +1,17 @@
-import React from "react";
-// import "./Todolist.css";
-export default function Todolist(props) {
-    const todos = props.tasks;
-    console.log(todos);
-    return null;
-    // const task = todos.map(item => {
-    //     return (
-    //         <div className="card" key={item.key}>
-    //             <p>{item.task}</p>
-    //         </div>
-    //     )
-    // })
-    // return (
-    //     <div className="col-md-6">
-    //         {task}
-    //     </div>
-    // )
+import React from 'react';
 
+
+const Todolist = ({ item }) => {
+    // const doing = (item) =>{
+    //     if (item.st) {
+            
+    //     }
+    // }
+   return(<div className="col-12 mt-1">
+       <ul>
+         <li key={item.key}>{item.task}</li>
+        </ul>
+    </div>);
 }
+
+export default Todolist;

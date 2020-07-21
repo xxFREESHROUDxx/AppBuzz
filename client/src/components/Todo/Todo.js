@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Todolist from "./Todolist";
 // import Todolist from "./Todolist";
 
 class Todo extends Component{
@@ -6,12 +7,17 @@ class Todo extends Component{
         super(props);
         this.setTask = this.setTask.bind(this);
         this.saveTask = this.saveTask.bind(this);
-        this.Todolist = this.Todolist.bind(this);
+        // this.Todolist = this.Todolist.bind(this);
+        this.setPriority = this.setPriority.bind(this);
+        this.setStatus = this.setStatus.bind(this);
+
         this.state = {
-            tasks:null,
+            tasks:[],
             current : {
                 task:'',
                 key:'',
+                priority:'medium',
+                status:'todo'
             }
             
         }
@@ -24,7 +30,6 @@ class Todo extends Component{
     }
 
     setTask = (event) => {
-        
         this.setState({
            current: { 
                task:event.target.value,
@@ -32,41 +37,47 @@ class Todo extends Component{
             }, 
         })
     }
+
+    setPriority = (event) =>{
+        event.persist();
+        this.setState(prevState => ({
+            ...prevState.current,
+            current:{
+                priority: event.target.value,
+            }
+            
+        })
+        )
+        
+    }
+    setStatus = (event) =>{
+        this.setState({
+            current:{
+                status:event.target.value
+            }
+        })
+    }
+
     saveTask = (event) => {
         event.preventDefault(); 
         const newTask = this.state.current;
-        const Todos =  [newTask, ...this.state.tasks];
-        console.log(Todos);
-
-             this.setState({
-                tasks: Todos,
-                current : {
-                    task:'',
-                    key:'',
-                }
-            })
-            console.log(this.state.tasks);
-            localStorage.setItem('todos', JSON.stringify(this.state.tasks));   
-       
+        if (newTask.task!=="") {
+            console.log(newTask)
+            const Todos =  [newTask, ...this.state.tasks];
+                 this.setState({
+                    tasks: Todos,
+                    current : {
+                        task:'',
+                        key:'',
+                        priority:'',
+                        status:''
+                    }
+                })
+                localStorage.setItem('todos', JSON.stringify(Todos));   
+        }
     }
 
-    Todolist = () => {
-        const todos = this.state.tasks;
-        
-        // const task = todos.map(item => {
-        //     return (
-        //         <div className="card" key={item.key}>
-        //             <p>{item.task}</p>
-        //         </div>
-        //     )
-        // })
-        // return (
-        //     <div className="col-md-6">
-        //         {task}
-        //     </div>
-        // )
-    
-    }
+   
     render(){
         return(
            <div className="container">
@@ -76,17 +87,33 @@ class Todo extends Component{
                             <h3>Add to-do task</h3>
                            <form onSubmit={this.saveTask} >
                                <div className="form-group">
-                                   <input className="form-control" placeholder="Task....." onChange={this.setTask} value={this.state.current.task} />
+                                   <input type="text" className="form-control" placeholder="Task....." onChange={this.setTask} />
+                               </div>
+                               {/* <div className="form-group">
+                                    <label>choose priority</label>
+                                   <select className="form-control" onChange={this.setPriority} value={this.state.current.priority}>
+                                       <option value="medium">Medium</option>
+                                       <option value="low">Low</option>
+                                       <option value="high">High</option>
+                                   </select>
                                </div>
                                <div className="form-group">
-                                   <input className="btn btn-sm btn-success" type="submit" />
+                               <label>Set Status</label>
+                                   <select className="form-control" onChange={this.setStatus} value={this.state.current.status}>
+                                       <option value="todo">To do</option>
+                                       <option value="doing">Doing</option>
+                                       <option value="completed">Completed</option>
+                                   </select>
+                               </div> */}
+                               <div className="form-group">
+                                   <input className="btn btn-sm btn-outline-dark btn-block" type="submit" />
                                </div>
                            </form>
                        </div>
                    </div>
                </div>
-                <div className="row">
-                    { this.Todolist("tok") }
+                <div className="container">
+                {this.state.tasks.map((task, i) => <div key={i} className="test"><Todolist item={task} /></div>)}
                 </div>
            </div>
         )
