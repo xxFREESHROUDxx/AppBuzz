@@ -33,7 +33,7 @@ class News extends Component{
            <div className="container">
            <Loading loading= {this.state.loading}/>
                <div className="row">
-                   <div className="col-md-6 m-auto">
+                   <div className="col-md-11 col-lg-8 m-auto">
                         <div className="col-2 ml-auto text-right">
                             <Link to="/news_search">
                                 <button className="btn btn-linkedin mt-2 btn-sm">

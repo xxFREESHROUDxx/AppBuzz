@@ -3,7 +3,8 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-// import Moment from "react-moment";
+import DarkModeToggle from "react-dark-mode-toggle";
+import useDarkMode from 'use-dark-mode';
 import "./Sidebar.css";
 
 const useStyles = makeStyles({
@@ -16,10 +17,12 @@ const useStyles = makeStyles({
 });
 
 export default function Sidebar(props) {
+  const darkMode = useDarkMode(false);
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  // const [isDarkMode, setIsDarkMode] = React.useState(() => false);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -47,6 +50,16 @@ export default function Sidebar(props) {
           <a href="/">
             <i className="fas fa-home"></i> Home
           </a>
+        </li>
+        <li>
+        <i className="fas fa-home"></i> Dark Mode 
+         <DarkModeToggle
+            checked={darkMode.value} 
+            onChange={darkMode.toggle}
+            size={80}
+          />
+
+        
         </li>
         <li>
           <i className="fas fa-newspaper"></i> Documentation

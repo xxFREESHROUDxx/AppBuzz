@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Loading } from "../macros/Loading";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
 import "./search.css";
 import Result from "./Result";
 class News extends Component{

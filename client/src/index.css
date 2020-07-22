@@ -6,7 +6,64 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size:1rem;
 }
+body.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+body.dark-mode {
+  background-color: #1a1919 !important;
+  color: #999;
+}
+body.dark-mode .sidebar {
+  background: #000000d1;
+  border-bottom: 1px solid #ffffff63;
+}
 
+body.dark-mode .sidebar ul li {
+  color: white;
+  display: inline-block;
+  width: 50%;
+  font-size: 16px;
+}
+
+body.dark-mode .welcome {
+  color: white;
+}
+
+body.dark-mode .welcome a {
+  color: #ffffff9e;
+  box-shadow: 10px 7px 42px -18px #5d51559c;
+}
+body.dark-mode .footer{
+  background:black;
+  border-top: 1px solid #5f5959e6;
+}
+
+body.dark-mode .footer .right-text{
+  color: #ffffff;
+}
+body.dark-mode .footer .left-text{
+  color: #ffffff;
+}
+body.dark-mode .test .card{
+  background:black;
+  border: 1px solid #c1c1c194;
+}
+body.dark-mode .test .card .card-header{
+  background-color: #010f3aa1;
+  border-bottom: 1px solid #040a1b;
+}
+
+body.dark-mode .test .card .card-body{
+  color: #cececeed;
+  font-size: 14px;
+}
+
+body.dark-mode .test .card .card-footer {
+  background-color: #010925;
+  border-top: 1px solid #000000;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

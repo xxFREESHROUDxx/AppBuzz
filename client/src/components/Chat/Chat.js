@@ -46,9 +46,9 @@ const Chat = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
-
+  },[]);
+useEffect(()=> {
     socket.on('display', (data)=>{
-      console.log(data.user)
       if(data.typing===true){
         const trimmedName = data.user.trim().toLowerCase();
           if(name === trimmedName) {
@@ -60,7 +60,7 @@ const Chat = ({ location }) => {
     });
 
     setTimeout(setTyping(null), 5000);  
-}, []);
+},[typing]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -72,7 +72,7 @@ const Chat = ({ location }) => {
 
   const sendTyping = () =>{
     // event.preventDefault();
-    console.log("fend mesg")
+    
     socket.emit('sendTyping',{user:name, typing:true});
   }
 
