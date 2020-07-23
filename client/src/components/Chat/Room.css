@@ -1,0 +1,10 @@
+.room_wrap{
+    padding: 1px;
+    padding: 3px 7px;
+}
+body.dark-mode .room_wrap{
+    padding: 1px;
+    color: white;
+    /* background: #fdbd0b; */
+    padding: 3px 7px;
+}

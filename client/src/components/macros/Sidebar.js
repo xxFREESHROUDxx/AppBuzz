@@ -52,11 +52,11 @@ export default function Sidebar(props) {
           </a>
         </li>
         <li>
-        <i className="fas fa-home"></i> Dark Mode 
+        <i className="fas fa-magic"></i> Dark Mode &nbsp;
          <DarkModeToggle
             checked={darkMode.value} 
             onChange={darkMode.toggle}
-            size={40}
+            size={50}
           />
 
         

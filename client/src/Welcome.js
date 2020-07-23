@@ -7,7 +7,7 @@ class Welcome extends Component{
         return(
             <div>
             <div className="welcome-wrapper">
-            <main className="container welcome">
+            <main className="container welcome m-auto">
             <Link to={'/todo'}> <i className="fas fa-clipboard-list"></i><br />Todo</Link>
             <Link to={'/chat'}> <i className="fas fa-comment-alt"></i><br />chat</Link>
             <Link to={'/music'}> <i className="fas fa-music"></i><br />music</Link>
