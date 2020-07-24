@@ -60,6 +60,10 @@ body.dark-mode .test .card .card-body{
   font-size: 14px;
 }
 
+body.dark-mode hr{
+  border-top: 1px solid #cececeed;
+}
+
 body.dark-mode .test .card .card-footer {
   background-color: #010925;
   border-top: 1px solid #000000;

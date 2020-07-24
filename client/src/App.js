@@ -12,11 +12,13 @@ import Chat from "./components/Chat/Chat";
 import News from "./components/News/News";
 import Quotes from "./components/Quotes/Quotes";
 import Sidebar from "./components/macros/Sidebar";
+import Weather from "./components/Weather/Weather";
 import "./welcome.css";
 import Footer from "./components/macros/Footer";
 import { registerServiceWorker } from "./push-notifications";
 import Install from "./components/macros/Install";
 import Search from "./components/News/Search";
+import Books from "./components/Books/Books";
 // import PushNotificationDemo from "./PushNotificationDemo";
 const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
 
@@ -86,7 +88,6 @@ class App extends Component {
             <Sidebar />
             <div className="content">
               <Route path="/" exact component={Welcome}/>
-              <Route path="/todo"  component={Todo}/>
               <Route path="/music"  component={Music}/>
               <Route path="/news"  component={News}/>
               <Route path="/calculator"  component={Calculator}/>
@@ -94,6 +95,9 @@ class App extends Component {
               <Route path="/messages" component={Chat}/>
               <Route path="/quotes"  component={Quotes}/>
               <Route path="/news_search" component={Search}/>
+              <Route path="/weather" component={Weather}/>
+              <Route path="/books" component={Books}/>
+
             </div>
         </Router>
         <Footer />

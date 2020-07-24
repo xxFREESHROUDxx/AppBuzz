@@ -13,6 +13,8 @@ class Welcome extends Component{
             <Link to={'/music'}> <i className="fas fa-music"></i><br />music</Link>
             <Link to={'/news'}> <i className="far fa-newspaper"></i><br />news</Link>
             <Link to={'/quotes'}>quotes</Link>
+            <Link to={'/weather'}>weather</Link>
+            <Link to={'/books'}>books</Link>
             </main>
             </div>
             </div>
