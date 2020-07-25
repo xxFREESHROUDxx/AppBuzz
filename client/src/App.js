@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all";
 import "./App.css";
-import Todo from "./components/Todo/Todo";
 import Welcome from './Welcome';
 import Music from "./components/Music/Music";
 import Calculator from "./components/Calculator/Calculator";
@@ -19,6 +18,8 @@ import { registerServiceWorker } from "./push-notifications";
 import Install from "./components/macros/Install";
 import Search from "./components/News/Search";
 import Books from "./components/Books/Books";
+import Currency from "./components/Currency/currency";
+
 // import PushNotificationDemo from "./PushNotificationDemo";
 const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
 
@@ -97,6 +98,8 @@ class App extends Component {
               <Route path="/news_search" component={Search}/>
               <Route path="/weather" component={Weather}/>
               <Route path="/books" component={Books}/>
+              <Route path="/currency" component={Currency}/>
+
 
             </div>
         </Router>

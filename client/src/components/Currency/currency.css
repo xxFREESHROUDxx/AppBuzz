@@ -1,0 +1,16 @@
+.btn-dark_e{
+    background-color: #282a3c;
+    border-color: #282a3c;
+    color: #fff;
+}
+.btn-outline-dark_e{
+    color: #343a40;
+    border-color: #343a40;
+}
+.btn-wrap{
+    border-bottom: 1px solid #8a828263;
+    position: fixed;
+    z-index: 114;
+    background: white;
+    width: 100%;
+}

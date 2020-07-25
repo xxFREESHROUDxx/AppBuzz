@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Weather = () => {
 
-    const [lat,setLat] = useState();
-    const [lon,setLon] = useState();
+const Weather = () => {
     const [error,seterror] = useState('');
     const [Weather,setWeather] = useState([]);
-    const [Current, setCurrent] =  useState([]);
+    const [Currents, setCurrent] =  useState([]);
     const [Hourly, setHourly] = useState([]);
     const [Daily, setDaily] = useState([]);
+    const [isCurrentPage,setCurrentPage] = useState(true);
 
-    
     useEffect(() =>{
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(postion => {
-                  setLat(postion.coords.latitude);
-                  setLon(postion.coords.longitude);
-                  Data(postion.coords.latitude, postion.coords.longitude);
+                  Data(postion.coords.latitude, postion.coords.longitude);      
               });
             } else {
                  seterror("Geolocation is not supported by this browser.");
@@ -39,20 +35,21 @@ const Weather = () => {
                     })}
        
         return(
-           <div className="container">
+          isCurrentPage ?  <div className="container">
                <div className="row">
-                   <div className="col-md-6 m-auto">
-                       <div className="form-wrap mt-5">
+                   <div className="col-md-10 col-lg-6 col-sm-12 m-auto">
                             <h3>latitude : {Weather.lat}</h3>
                             <h3>longitude : {Weather.lon}</h3>
                             <p>TimeZone : {Weather.timezone}</p>
                             <p>TimeZone offset : {Weather.timezone_offset}</p>
-                            <p>Current Clouds : {Current.clouds}</p>
-                       </div>
+                            <p>Current Clouds : {Currents.clouds}</p>
+                       </div> 
                    </div>
+                   <button onClick={() => setCurrentPage(false)}>Weekly</button>
+               </div> :
+               <div> <h4>Weekly report</h4>
+               <button onClick={()=>setCurrentPage(true)}>Today</button>
                </div>
-
-           </div>
         )
     }
 export default Weather;

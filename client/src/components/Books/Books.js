@@ -33,7 +33,7 @@ const Books = () => {
            <div className="container">
            <Loading loading={loading} />
                <div className="row">
-                   <div className="col-md-6 m-auto">
+                   <div className="col-md-12 col-lg-8 col-sm-12 m-auto">
                    <h3 className="text-center mt-3">Best Seller of Week</h3><hr />
                         {books.map((book,i) => <Book book={book} key={i} />)}
                    </div>
@@ -42,4 +42,4 @@ const Books = () => {
            </div>
         )
     }
-export default Books;
+export default Books; 
