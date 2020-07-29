@@ -10,7 +10,7 @@ import Join from "./components/Chat/Join";
 import Chat from "./components/Chat/Chat";
 import News from "./components/News/News";
 import Quotes from "./components/Quotes/Quotes";
-import Sidebar from "./components/macros/Sidebar";
+import Sidebar from "./components/macros/Sidebar-bug";
 import Weather from "./components/Weather/Weather";
 import "./welcome.css";
 import Footer from "./components/macros/Footer";
@@ -35,21 +35,15 @@ class App extends Component {
 
   componentDidMount(){
     const getExixtingSubscription = async () => {
-       await registerServiceWorker().then(async function(){
-        
+       await registerServiceWorker().then(async function(){    
         let deferredPrompt;   
         const addBtn = document.querySelector('.add-button');
         const addD = document.querySelector('.install-dialog')
         const cancel = document.querySelector('.cancel')
-  
         addBtn.style.display = 'none';
       window.addEventListener('beforeinstallprompt', (e) => {
-        console.log("inside")
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
-        // Stash the event so it can be triggered later.
         deferredPrompt = e;
-        // Update UI to notify the user they can add to home screen
         addBtn.style.display = 'inline-block';
         addD.style.display = 'block';
         cancel.addEventListener('click',(e)=>{
@@ -57,11 +51,8 @@ class App extends Component {
           addD.style.display = 'none';
         })
         addBtn.addEventListener('click', (e) => {
-          // hide our user interface that shows our A2HS button
           addBtn.style.display = 'none';
-          // Show the prompt
           deferredPrompt.prompt();
-          // Wait for the user to respond to the prompt
           deferredPrompt.userChoice.then((choiceResult) => {
               if (choiceResult.outcome === 'accepted') {
                 console.log('User accepted the A2HS prompt');
@@ -99,8 +90,6 @@ class App extends Component {
               <Route path="/weather" component={Weather}/>
               <Route path="/books" component={Books}/>
               <Route path="/currency" component={Currency}/>
-
-
             </div>
         </Router>
         <Footer />
