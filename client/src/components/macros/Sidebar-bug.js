@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
+import {Darktoggle} from './DarkModetoggle';
 
 export default function Sidebar(){
   const getInitialState = () =>{
@@ -36,12 +37,12 @@ export default function Sidebar(){
               </li>
               <li className="text-right">
               <ul>
-                  <li>
-                  <button
+                  <li className="toggler">
+                  <Darktoggle
                       checked={darkMode} 
                       onClick={toggleMode}
                       size={50}
-                    >Dark</button>
+                  />
                   </li>
                 </ul>
               </li>
@@ -52,7 +53,4 @@ export default function Sidebar(){
     </div>
   );
 
-  function newFunction() {
-    return "right";
-  }
 }

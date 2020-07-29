@@ -53,7 +53,7 @@
 
 .sidebar ul{
   padding-top: 12px;
-  margin: 10px 0;
+  margin: 6px 0;
   padding: 0;
   /* padding-bottom: 5px; */
   color: #7a7a7a;
@@ -68,4 +68,29 @@
 } */
 .pageTitle .date{
   color: #74b9ff;
+}
+
+.toggler .btn-outline-dark:hover, .btn-outline-dark:active, .btn-outline-dark:focus{
+  background-color: inherit;
+  border: inherit;
+  color: initial;
+} 
+
+.toggler .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus{
+  background-color: inherit;
+  border: inherit;
+  color: initial;
+} 
+
+.switch-off{
+  border: 1px solid #21282f !important;
+  padding: 4px;
+  color:#21282f;
+}
+.off .switch-handle {
+  background-color: #21282f !important;
+}
+.switch-on{
+  color: white;
+  background-color: cadetblue;
 }

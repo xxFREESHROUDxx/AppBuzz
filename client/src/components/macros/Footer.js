@@ -13,7 +13,7 @@ export default class Footer extends Component{
                     </a>
                 
                     <button className="left-text btn btn-bolder" onClick={ this.backButton }>
-                        Back
+                    <i className="fas fa-chevron-left"></i> Back
                     </button>
                 </div>
           </div>

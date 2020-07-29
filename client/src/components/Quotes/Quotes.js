@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Quote from "./Quote";
 import "./Quote.css";
-import Loading from "../macros/Loading";
+import {Loading} from "../macros/Loading";
 
 
 const Quotes = () => {
@@ -11,7 +11,7 @@ const Quotes = () => {
     const [start,setStart] = useState(0);
     const count = 50;
     const [currentQ, setCurrentQ] = useState([]);
-    const [total,setTotal] = useState('');
+    // const [total,setTotal] = useState('');
     const [end,setend] = useState('');
     const [loading,setLoading] = useState(true);
     // const [lon,setLon] = useState();
@@ -31,7 +31,7 @@ const Quotes = () => {
        await axios.get("https://type.fit/api/quotes")
         .then(response => {
             setQ(response.data);
-            setTotal(response.data.length);
+            // setTotal(response.data.length);
             setCur(response.data);
             setLoading(false);
         })
@@ -44,6 +44,7 @@ const Quotes = () => {
          setLoading(true);
         let items = [];
         let end = start+count; 
+        setend(end);
         for (let number = start; number < end ; number++) {
             items.push(
                 quote[number]
@@ -61,7 +62,7 @@ const Quotes = () => {
         let start_new = start-(2*count);
         if(start_new >= 0){
             let end = start_new+count;
-        setend(end);
+        
         for (let number = start_new; number < end ; number++) {
             items.push(
                 quote[number]
@@ -79,6 +80,7 @@ const Quotes = () => {
         return(
          
            <div className="container">
+           <Loading loading={loading} />
                <div className="row">
                    <div className="col-md-6 m-auto">
                         <div class="navigator col-4 ml-auto mt-4">

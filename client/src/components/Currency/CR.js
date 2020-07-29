@@ -10,7 +10,7 @@ const CR = () => {
 
     useEffect(() =>{
            Data(src);
-    },[]);
+    },[src]);
 
     useEffect(()=>{
         setLoading(true);
@@ -23,7 +23,7 @@ const CR = () => {
             }
             ))
            
-           const info = {
+           const inf = {
             columns: [
               {
                 label: 'Country',
@@ -42,7 +42,7 @@ const CR = () => {
             rows: data
           };
 
-          setInfo(info);
+          setInfo(inf);
           setLoading(false);
     },[countryRates])
 
@@ -55,10 +55,10 @@ const CR = () => {
                 }).then(function (response) {
                         // handle success
                        setCR(response.data.rates);
-                       const info = {
-                           date: response.data.date,
-                           timestamp:response.data.timestamp
-                       }
+                      //  const info = {
+                      //      date: response.data.date,
+                      //      timestamp:response.data.timestamp
+                      //  }
                        setSrc(response.data.source);
                        
                 }).catch(function (error) {

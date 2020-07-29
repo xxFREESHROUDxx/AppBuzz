@@ -44,6 +44,7 @@ const Weather = () => {
                             <p>TimeZone offset : {Weather.timezone_offset}</p>
                             <p>Current Clouds : {Currents.clouds}</p>
                        </div> 
+                       {/* <Current /> */}
                    </div>
                    <button onClick={() => setCurrentPage(false)}>Weekly</button>
                </div> :

@@ -15,7 +15,7 @@ const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
-  const [users_count, setUsersCount] = useState('');
+  // const [users_count, setUsersCount] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [typing, setTyping] = useState('')
@@ -47,7 +47,7 @@ const Chat = ({ location }) => {
     
     socket.on("roomData", ({ users }) => {
       setUsers(users);
-      setUsersCount(users.length);
+      // setUsersCount(users.length);
     });
   },[]);
 useEffect(()=> {
@@ -62,7 +62,7 @@ useEffect(()=> {
       }   
     });
 
-},[]);
+});
 
   const sendMessage = (event) => {
     event.preventDefault();

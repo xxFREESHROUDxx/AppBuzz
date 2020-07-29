@@ -21,10 +21,10 @@ const Convert = () => {
             }).then(function (response) {
                     // handle success
                    setCR(response.data.rates);
-                   const info = {
-                       date: response.data.date,
-                       timestamp:response.data.timestamp
-                   }
+                //    const info = {
+                //        date: response.data.date,
+                //        timestamp:response.data.timestamp
+                //    }
             }).catch(function (error) {
                     // handle error
                     console.log(error);

@@ -11,9 +11,6 @@ const Currency = () => {
            Symbols();
     },[]);
 
-  
-
-
     async function Symbols(){
         axios({
         method: 'get',

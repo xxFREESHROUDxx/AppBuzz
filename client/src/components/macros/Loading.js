@@ -1,3 +1,5 @@
 import React from "react";
-
-export const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
+import loader from "../../loader.gif";
+export const Loading = ({ loading }) => (loading ? <div className="app-loader">
+    <img src={loader} />
+</div> : null);

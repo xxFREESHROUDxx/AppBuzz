@@ -9,18 +9,19 @@
 
 }
 .sidebar{
-  max-height: 8vh;
-  min-height: 8vh;
+  max-height: 9vh;
+  min-height: 9vh;
 }
 .content{
-  max-height: 84vh;
-  min-height: 84vh;
+  max-height: 82vh;
+  min-height: 82vh;
   overflow: scroll;
   overflow-x: hidden;
 }
 .footer{
-  max-height: 8vh;
-  min-height: 8vh;
+  top: 0em !important;
+  max-height: 9vh;
+  min-height: 9vh;
   display: block;
   justify-content: center;
   justify-items: center;
@@ -30,6 +31,7 @@
   width: 100%;
   border-top: 1px solid #5f595952;
   background: #ebebed;
+  box-shadow: none !important;
 }
 .footer .left-text{
   float: left;
