@@ -19,9 +19,6 @@ class Welcome extends Component{
             <Link to={'/chat'}> <i className="fas fa-comment-alt"></i><br />chat</Link>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-            <Link to={'/music'}> <i className="fas fa-music"></i><br />music</Link>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
             <Link to={'/news'}> <i className="far fa-newspaper"></i><br />news</Link>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">

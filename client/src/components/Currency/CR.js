@@ -48,39 +48,35 @@ const CR = () => {
 
     
     async function Data(src){
+       console.log(src);
             setLoading(true);
-                   await axios({
+                 await axios({
                     method: 'get',
-                    url: `https://v1.nocodeapi.com/twonty/cx/ApwdHiihkdwSKMOB/rates?api_key=UlBjKbXwuRGQIXLNB&source=${src}`, 
+                    url: `https://v1.nocodeapi.com/twonty/cx/nBoNPMcrQCUvmOfv/rates?api_key=UlBjKbXwuRGQIXLNB&source=${src}`, 
                 }).then(function (response) {
-                        // handle success
                        setCR(response.data.rates);
-                      //  const info = {
-                      //      date: response.data.date,
-                      //      timestamp:response.data.timestamp
-                      //  }
-                       setSrc(response.data.source);
-                       
+                       setLoading(false);
                 }).catch(function (error) {
                         // handle error
                         console.log(error);
                 })
-                setLoading(false);    
+               
     }
 
    
 
 const filter = (event) => {
     let srcmew = event.target.value;
-    Data(srcmew);
+    setSrc(srcmew);
+    // Data(src);
 }
        
         return(
                <div className="container-fluid">
                   <Loading loading={loading} />
                    <h6>Select Source:</h6>
-                   <select onChange={ filter} value={src} className="form-control">
-                        {Object.keys(countryRates).map((key,i) => <option value={key} key={i}>{key}</option>)}
+                   <select onChange={filter} value={src} className="form-control">
+                        {Object.keys(countryRates).map((opt,i) => <option value={opt} key={i}>{opt}</option>)}
                    </select>
                    <MDBDataTable 
                     striped

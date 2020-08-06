@@ -83,7 +83,7 @@ const Quotes = () => {
            <Loading loading={loading} />
                <div className="row">
                    <div className="col-md-6 m-auto">
-                        <div class="navigator col-4 ml-auto mt-4">
+                        <div className="navigator col-4 ml-auto mt-4">
                        
                             { (start!==count) ? <button className="btn btn-sm btn-dark mt-2 ml-auto mx-2 ac_btn" onClick={ () => setBack(quote)}>
                                 <i className="fas fa-arrow-left"></i>

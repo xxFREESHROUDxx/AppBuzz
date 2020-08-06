@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all";
 import "./App.css";
 import Welcome from './Welcome';
-import Music from "./components/Music/Music";
+// import Music from "./components/Music/Music";
 import Calculator from "./components/Calculator/Calculator";
 import Join from "./components/Chat/Join";
 import Chat from "./components/Chat/Chat";
@@ -19,9 +19,10 @@ import Install from "./components/macros/Install";
 import Search from "./components/News/Search";
 import Books from "./components/Books/Books";
 import Currency from "./components/Currency/currency";
+import {Loading} from "./components/macros/Loading";
 
 // import PushNotificationDemo from "./PushNotificationDemo";
-const Loading = ({ loading }) => (loading ? <div className="app-loader">Loading...</div> : null);
+
 
 class App extends Component {
   // const [footer, setFooter] = useState(true);
@@ -80,7 +81,7 @@ class App extends Component {
             <Sidebar />
             <div className="content">
               <Route path="/" exact component={Welcome}/>
-              <Route path="/music"  component={Music}/>
+              {/* <Route path="/music"  component={Music}/> */}
               <Route path="/news"  component={News}/>
               <Route path="/calculator"  component={Calculator}/>
               <Route path="/chat"  component={Join}/>

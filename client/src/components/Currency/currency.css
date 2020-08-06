@@ -14,3 +14,18 @@
     background: white;
     width: 100%;
 }
+.contry_box{
+    padding: 5px;
+    border: 1px solid #a9a9a921;
+    min-height: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+}
+.cb_img{
+    border-bottom: 1px solid #00800063;
+    margin-bottom: 7px;
+}
+.cb_details{
+    line-height: 1;
+}
