@@ -106,16 +106,16 @@ app.use(
 
 
 
-function handleExit(err) {
-  if (err) {
-    console.log(err);
-  }
-  if (options.exit) {
-    process.exit();
-  }
-}
+// function handleExit(err) {
+//   if (err) {
+//     console.log(err);
+//   }
+//   if (options.exit) {
+//     process.exit();
+//   }
+// }
 
-process.on("exit", handleExit.bind(null));
-process.on("SIGINT", handleExit.bind(null));
-process.on("SIGTERM", handleExit.bind(null));
-process.on("uncaughtException", handleExit.bind(null));
+// process.on("exit", handleExit.bind(null));
+// process.on("SIGINT", handleExit.bind(null));
+// process.on("SIGTERM", handleExit.bind(null));
+// process.on("uncaughtException", handleExit.bind(null));
