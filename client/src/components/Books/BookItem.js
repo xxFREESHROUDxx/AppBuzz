@@ -1,10 +1,13 @@
 import React from 'react';
 import "./bookitem.css";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Fade } from "react-awesome-reveal";
 
 const Book = ({ item, i }) => {
  
-   return(<div className="card_e p-2">
+   return(
+   <Fade cascade>
+   <div className="card_e p-2">
         <div className="img_wrapper" style={{backgroundImage:`url(${item.book_image})`}}>  
         </div>
         <div className="detail_wrapper">
@@ -25,7 +28,8 @@ const Book = ({ item, i }) => {
                 </Dropdown.Menu>
             </Dropdown>
         </div>
-   </div>);
+   </div>
+   </Fade>);
 }
 
 export default Book;

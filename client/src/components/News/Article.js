@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Article = ({ article }) => {
 //    console.log(article);
@@ -10,7 +11,14 @@ const Article = ({ article }) => {
             </h4>
         </div>
         <div className="card-body">
-            <img src={article.media[0] ? article.media[0]['media-metadata'][2].url : ""} alt={article.media[0] ? article.media[0].caption : "NewsImage"} width="100%"/>
+            <LazyLoadImage 
+                src={article.media[0] ? article.media[0]['media-metadata'][2].url : ""} 
+                alt={article.media[0] ? article.media[0].caption : "NewsImage"} 
+                width="100%"
+                effect="blur"
+
+            />
+        
             <p className="mt-4">{article.abstract}</p>
         </div>
         <div className="card-footer d-block w-100 px-2">

@@ -17,7 +17,7 @@ const InfoBar = ({ room, typing, user, recip }) => {
     </div>
     <div className="rightInnerContainer">
       <div className="px-2">
-      <h4>{recip.length} Peoples</h4>
+      <h6>{recip.length} People</h6>
       </div>
       <a href="/"><img src={closeIcon} alt="close icon" /></a>
     </div>
