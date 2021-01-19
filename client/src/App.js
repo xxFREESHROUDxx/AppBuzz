@@ -52,7 +52,7 @@ class App extends Component {
           addD.style.display = 'none';
         })
         addBtn.addEventListener('click', (e) => {
-          addBtn.style.display = 'none';
+          addD.style.display = 'none';
           deferredPrompt.prompt();
           deferredPrompt.userChoice.then((choiceResult) => {
               if (choiceResult.outcome === 'accepted') {
