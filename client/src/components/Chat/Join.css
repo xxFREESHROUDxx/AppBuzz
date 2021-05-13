@@ -16,10 +16,14 @@
 }
 
 .heading {
-  color: white;
+  color: gray;
   font-size: 2.5em;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
+}
+
+.heading h1{
+  color: bisque;
 }
 
 

@@ -24,6 +24,7 @@
   text-align: center;
   box-shadow: 10px 7px 42px -18px #8e20449c;
   text-transform: uppercase;
+  background-color: #f8edeb;
   }
   
   @media (min-width: 360px) and (max-width: 720px) {
