@@ -18,22 +18,11 @@ const Books = () => {
             .then(response => {
                 setBooks(response.data.results.lists);
                 // let list = response.data.results.lists
-                localStorage.setItem("bookData", JSON.stringify(response.data.results.lists))
+                setLoading(false)
             })
             .catch(error => {
-                setBooks(JSON.parse(localStorage.getItem("bookData")));
                 console.log(error);
-                if (!localStorage.getItem("bookData")) {
-
-                    setTimeout(() => {
-                        alert("Please Connect to the internet")
-                    }, 5000)
-                }
-            }).finally(() => {
-                if (!!localStorage.getItem("bookData")) {
-                    setLoading(false);
-                }
-            });
+            })
     }
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all";
 import "./App.css";
@@ -19,7 +19,7 @@ import Install from "./components/macros/Install";
 import Search from "./components/News/Search";
 import Books from "./components/Books/Books";
 import Currency from "./components/Currency/currency";
-import {Loading} from "./components/macros/Loading";
+import { Loading } from "./components/macros/Loading";
 
 // import PushNotificationDemo from "./PushNotificationDemo";
 
@@ -27,34 +27,34 @@ import {Loading} from "./components/macros/Loading";
 class App extends Component {
   // const [footer, setFooter] = useState(true);
 
- constructor(props){
-   super(props);
-   this.state = {
-    loading:true
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    }
   }
- }
 
-  componentDidMount(){
+  componentDidMount() {
     const getExixtingSubscription = async () => {
-       await registerServiceWorker().then(async function(){    
-        let deferredPrompt;   
+      await registerServiceWorker().then(async function () {
+        let deferredPrompt;
         const addBtn = document.querySelector('.add-button');
         const addD = document.querySelector('.install-dialog')
         const cancel = document.querySelector('.cancel')
         addBtn.style.display = 'none';
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        addBtn.style.display = 'inline-block';
-        addD.style.display = 'block';
-        cancel.addEventListener('click',(e)=>{
+        window.addEventListener('beforeinstallprompt', (e) => {
           e.preventDefault();
-          addD.style.display = 'none';
-        })
-        addBtn.addEventListener('click', (e) => {
-          addD.style.display = 'none';
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
+          deferredPrompt = e;
+          addBtn.style.display = 'inline-block';
+          addD.style.display = 'block';
+          cancel.addEventListener('click', (e) => {
+            e.preventDefault();
+            addD.style.display = 'none';
+          })
+          addBtn.addEventListener('click', (e) => {
+            addD.style.display = 'none';
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
               if (choiceResult.outcome === 'accepted') {
                 console.log('User accepted the A2HS prompt');
               } else {
@@ -62,36 +62,36 @@ class App extends Component {
               }
               deferredPrompt = null;
             });
+          });
         });
+      })
+      this.setState({
+        loading: false
       });
-    })
-    this.setState({
-      loading:false
-    });
     };
     getExixtingSubscription();
-  
+
   }
-  render(){
+  render() {
     return (
-    <div className="body">
-      <Loading loading={ this.state.loading } />
-      <Install />
+      <div className="body">
+        <Loading loading={this.state.loading} />
+        <Install />
         <Router>
-            <Sidebar />
-            <div className="content">
-              <Route path="/" exact component={Welcome}/>
-              {/* <Route path="/music"  component={Music}/> */}
-              <Route path="/news"  component={News}/>
-              <Route path="/calculator"  component={Calculator}/>
-              <Route path="/chat"  component={Join}/>
-              <Route path="/messages" component={Chat}/>
-              <Route path="/quotes"  component={Quotes}/>
-              <Route path="/news_search" component={Search}/>
-              <Route path="/weather" component={Weather}/>
-              <Route path="/books" component={Books}/>
-              <Route path="/currency" component={Currency}/>
-            </div>
+          <Sidebar />
+          <div className="content">
+            <Route path="/" exact component={Welcome} />
+            {/* <Route path="/music"  component={Music}/> */}
+            <Route path="/news" component={News} />
+            <Route path="/calculator" component={Calculator} />
+            <Route path="/chat" component={Join} />
+            <Route path="/messages" component={Chat} />
+            <Route path="/quotes" component={Quotes} />
+            <Route path="/news_search" component={Search} />
+            <Route path="/weather" component={Weather} />
+            <Route path="/books" component={Books} />
+            <Route path="/currency" component={Currency} />
+          </div>
         </Router>
         <Footer />
       </div>)

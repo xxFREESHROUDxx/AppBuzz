@@ -21,37 +21,25 @@ const Convert = () => {
         }).then(function (response) {
             // handle success
             setCR(response.data.rates);
-            localStorage.setItem("currencyData", JSON.stringify(response.data.rates))
+            setLoading(false)
             //    const info = {
             //        date: response.data.date,
             //        timestamp:response.data.timestamp
             //    }
         }).catch(function (error) {
-            setCR(JSON.parse(localStorage.getItem("currencyData")));
-
             // handle error
             console.log(error);
-            if (!localStorage.getItem("currencyData")) {
-
-                setTimeout(() => {
-                    alert("Couldn't find required data for currency.")
-                }, 5000)
-            }
         })
-        if (!!localStorage.getItem("currencyData")) {
-            setLoading(false);
-        }
     }
     async function Convert() {
         await axios({
             method: 'get',
 
-            url: `https://v1.nocodeapi.com/xxfreeshroudxx/cx/cRuvAfBLrqlMKyBY/rates/convert?amount=${amount}&from=${from}&to=${to}
-`,
+            url: `https://v1.nocodeapi.com/xxfreeshroudxx/cx/cRuvAfBLrqlMKyBY/rates/convert?amount=${amount}&from=${from}&to=${to}`,
         }).then(function (response) {
             // handle success
+            setLoading(false)
             setData(response.data);
-            console.log(response);
         }).catch(function (error) {
             // handle error
             console.log(error);
