@@ -6,15 +6,17 @@ const port = process.env.PORT || 8080;
 const host = process.env.HOSTNAME || "0.0.0.0";
 
 
-const server = app.listen(port, host, () => {
+
+const server = app.listen(port, () => {
   console.log('Port %d', port);
-  console.log(`Node.js API server is listening on http://${host}`);
+
+  console.log(`Node.js API server is listening on http://localhost:${port}`);
+
 });
 
 const socketio = require('socket.io')({
   path: '/socket'
 });
-
 const io = socketio.listen(server);
 
 // const router = require('./src/router');
@@ -44,9 +46,11 @@ io.on('connect', (socket) => {
     if (error) return callback(error);
 
     socket.join(user.room);
+
     //Displays a welcome message to the user who have joined the room.
     socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.` });
     //displays a joined room message to all other room users except that particular user
+
     socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
 
     io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
@@ -67,8 +71,8 @@ io.on('connect', (socket) => {
     if (data.typing == true) {
       io.to(user.room).emit('display', data)
     }
-
   })
+
   // When the user exits from the room
   socket.on('disconnect', () => {
     //the user is deleted from array of users and a left room message displayed
@@ -94,7 +98,7 @@ if (process.env.NODE_ENV === "production") {
   })
 }
 
-process.env.CORS_ORIGIN = "http://localhost:3000, https://webalarm.herokuapp.com";
+process.env.CORS_ORIGIN = "http://localhost:3000";
 app.use(
   cors({
     origin(origin, cb) {
