@@ -29,3 +29,7 @@
 .cb_details{
     line-height: 1;
 }
+
+img{
+    max-width: 100%;
+}

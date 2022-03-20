@@ -8,3 +8,8 @@ body.dark-mode .room_wrap{
     /* background: #fdbd0b; */
     padding: 3px 7px;
 }
+
+.what{
+    display: flex;
+    align-items: center;
+}

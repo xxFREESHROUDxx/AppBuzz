@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Flip } from "react-awesome-reveal";
 
-class Welcome extends Component{
-    render(){
-        return(
+class Welcome extends Component {
+    render() {
+        return (
             <div>
                 <div className="welcome-wrapper">
                     <main className="welcome row">
@@ -12,7 +12,7 @@ class Welcome extends Component{
                             <Flip direction="vertical">
                                 <Link to={'/books'}> <i className="fas fa-book"></i><br />books</Link>
                             </Flip>
-                        </div>   
+                        </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                             <Flip direction="vertical">
                                 <Link to={'/currency'}> <i className="fas fa-money-bill-wave"></i><br />currency</Link>
@@ -28,14 +28,24 @@ class Welcome extends Component{
                                 <Link to={'/news'}> <i className="far fa-newspaper"></i><br />news</Link>
                             </Flip>
                         </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                             <Flip direction="vertical">
-                                <Link to={'/quotes'}> <i className="fas fa-bacon"></i><br/>quotes</Link>
+                                <Link to={'/quotes'}> <i className="fas fa-bacon"></i><br />quotes</Link>
                             </Flip>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                             <Flip direction="vertical">
                                 <Link to={'/weather'}> <i className="fas fa-cloud"></i><br />weather</Link>
+                            </Flip>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                            <Flip direction="vertical">
+                                <Link to={'/maze'}> <i className="fas fa-cheese"></i><br />Maze Game</Link>
+                            </Flip>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                            <Flip direction="vertical">
+                                <Link to={'/astar'}> <i className="fas fa-broadcast-tower"></i><br />A* Algorithm</Link>
                             </Flip>
                         </div>
                     </main>

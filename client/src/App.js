@@ -12,6 +12,7 @@ import News from "./components/News/News";
 import Quotes from "./components/Quotes/Quotes";
 import Sidebar from "./components/macros/Sidebar-bug";
 import Weather from "./components/Weather/Weather";
+import Maze from "./components/maze/Maze";
 import "./welcome.css";
 import Footer from "./components/macros/Footer";
 import { registerServiceWorker } from "./push-notifications";
@@ -20,6 +21,7 @@ import Search from "./components/News/Search";
 import Books from "./components/Books/Books";
 import Currency from "./components/Currency/currency";
 import { Loading } from "./components/macros/Loading";
+import Pathfind from './components/Astar/Pathfind';
 
 // import PushNotificationDemo from "./PushNotificationDemo";
 
@@ -91,6 +93,8 @@ class App extends Component {
             <Route path="/weather" component={Weather} />
             <Route path="/books" component={Books} />
             <Route path="/currency" component={Currency} />
+            <Route path="/maze" component={Maze} />
+            <Route path="/astar" component={Pathfind} />
           </div>
         </Router>
         <Footer />

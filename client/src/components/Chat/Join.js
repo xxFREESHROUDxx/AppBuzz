@@ -25,7 +25,7 @@ export default function Join() {
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
         <div className="container mt-2">
-          <h3>Racently Joined Rooms</h3><hr />
+          <h3>Recently Joined Rooms</h3><hr />
           {rooms.map((room, i) => <div className="room_wrap" key={i}><Rooms room={room} user={name} /></div>)}
         </div>
         <h1 className="heading">Join</h1>

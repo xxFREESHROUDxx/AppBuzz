@@ -1,0 +1,18 @@
+.rowWrapper{
+    display: flex;
+}
+
+.Wrapper{
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+button{
+    margin-bottom: 20px;
+}
+
+.refresh{
+    margin-left: 20px;
+}

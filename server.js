@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 const port = process.env.PORT || 8080;
-// const host = process.env.HOSTNAME || "codewithsudeep";
+// const host = process.env.HOSTNAME || "xxfreeshroudxx";
 const host = process.env.HOSTNAME || "0.0.0.0";
 
 
@@ -68,7 +68,7 @@ io.on('connect', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    console.log("user dis")
+    console.log("user disconnected")
     const user = removeUser(socket.id);
 
     if (user) {
