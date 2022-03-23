@@ -20,7 +20,7 @@ class Welcome extends Component {
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                             <Flip direction="vertical">
-                                <Link to={'/chat'}> <i className="fas fa-comment-alt"></i><br />chat</Link>
+                                <Link to={'/chat'}> <i className="fas fa-comment-alt"></i><br />secured chat</Link>
                             </Flip>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
@@ -38,7 +38,7 @@ class Welcome extends Component {
                                 <Link to={'/weather'}> <i className="fas fa-cloud"></i><br />weather</Link>
                             </Flip>
                         </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        {/* <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                             <Flip direction="vertical">
                                 <Link to={'/maze'}> <i className="fas fa-cheese"></i><br />Maze Game</Link>
                             </Flip>
@@ -47,7 +47,7 @@ class Welcome extends Component {
                             <Flip direction="vertical">
                                 <Link to={'/astar'}> <i className="fas fa-broadcast-tower"></i><br />A* Algorithm</Link>
                             </Flip>
-                        </div>
+                        </div> */}
                     </main>
                 </div>
             </div>
